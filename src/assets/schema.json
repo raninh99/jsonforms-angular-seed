@@ -1,60 +1,35 @@
-{
-  "definitions": {
-    "order": {
-      "type": "object",
-      "properties": {
-        "customer": {
-          "type": "object",
-          "properties": {
-            "id": { "type": "string" },
-            "name": { "type": "string"},
-            "department": { "type": "string" },
-            "emailAddress": { "type": "string", "format": "email" }
-          }
-        },
-        "title": {
-          "type": "string",
-          "minLength": 5
-        },
-        "description": {
-          "type": "string"
-        },
-        "ordered": { "type": "boolean" },
-        "processId": {
-          "type": "number",
-          "minimum": 0
-        },
-        "assignee": { "type": "string" },
-        "startDate": {
-          "type": "string",
-          "format": "date"
-        },
-        "endDate": {
-          "type": "string",
-          "format": "date"
-        },
-        "status": {
-          "type": "string",
-          "enum": ["unordered", "planned", "ordered"]
-        },
-        "amount": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 100,
-          "default": 10,
-          "multipleOf": 1
-        }
-      }
-    }
-  },
-  "type": "object",
+
+
+
+{"type": "object",
   "properties": {
-    "orders": {
-      "type": "array",
-      "items": {
-        "$ref": "#/definitions/order"
-      }
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Please enter your name"
+    },
+    "label": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Please enter your name"
+    },
+    "actionCd": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Please enter your name"
+    },
+    "hasDialog": {
+      "type": "boolean"
+    },
+    "submitParams.0.paramName": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Please enter your name"
+    },
+    "submitParams.0.paramValue": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Please enter your name"
     }
-  },
-  "required": ["title"]
+  }
 }
